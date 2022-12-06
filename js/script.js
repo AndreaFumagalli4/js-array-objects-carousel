@@ -58,8 +58,19 @@ images.forEach((image, index) => {
 console.log(divList);
 
 divList[0].classList.add('active');
+let counter = 0;
 
 const previousButton = document.querySelector('div.previous');
 const nextButton = document.querySelector('div.next');
 
+nextButton.addEventListener('click', function() {
+    counter++;
+    divList[(counter - 1)].classList.remove('active');
+    divList[counter].classList.add('active');
+});
 
+previousButton.addEventListener('click', function() {
+    counter--;
+    divList[(counter + 1)].classList.remove('active');
+    divList[counter].classList.add('active');
+});
