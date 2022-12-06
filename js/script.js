@@ -81,6 +81,8 @@ previousButton.addEventListener('click', function() {
     divList[counter].classList.add('active');
 });
 
+const divListThumbnail = [];
+
 const sideBigBox = document.querySelector('div.carousel-wrapper');
 const sideBox = document.createElement('div');
 sideBox.classList.add('carousel-thumbnails');
@@ -93,4 +95,11 @@ images.forEach((image) => {
     imageBoxThumbnail.classList.add('my_carousel-thumbnail', 'p-2');
     imageBoxThumbnail.append(tagImageThumbnail);
     sideBox.append(imageBoxThumbnail);
+    divListThumbnail.push(imageBoxThumbnail);
+});
+
+const clickImageThumbnail = document.querySelector('div.my_carousel-thumbnail');
+
+clickImageThumbnail.addEventListener('click', function() {
+    counter = 1;
 });
