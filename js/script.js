@@ -81,4 +81,16 @@ previousButton.addEventListener('click', function() {
     divList[counter].classList.add('active');
 });
 
-const sideBox = document.querySelector('div.carousel-wrapper');
+const sideBigBox = document.querySelector('div.carousel-wrapper');
+const sideBox = document.createElement('div');
+sideBox.classList.add('carousel-thumbnails');
+sideBigBox.append(sideBox);
+
+images.forEach((image) => {
+    const imageBoxThumbnail = document.createElement('div');
+    const tagImageThumbnail = document.createElement('img');
+    tagImageThumbnail.src = `./${image.image}`;
+    imageBoxThumbnail.classList.add('my_carousel-thumbnail', 'p-2');
+    imageBoxThumbnail.append(tagImageThumbnail);
+    sideBox.append(imageBoxThumbnail);
+});

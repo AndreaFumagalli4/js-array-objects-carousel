@@ -11,7 +11,7 @@ div.carousel-wrapper{
     width: 77%;
     height: 680px;
     margin: auto;
-    background-color: aqua;
+    /* background-color: aqua; */
     position: relative;
 }
 
@@ -20,10 +20,10 @@ div.carousel-image{
     background-color: blue;
 }
 
-/* div.carousel-thumbnails{
+div.carousel-thumbnails{
     width: 21.5%;
-    background-color: violet;
-} */
+    /* background-color: violet; */
+}
 
 .font-color-white{
     color:white;
@@ -57,9 +57,15 @@ div.my_carousel-item.active {
     display:block;
 }
 
-div.my_carousel-item img{
+div.my_carousel-item img,
+div.my_carousel-thumbnail img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
+
+div.my_carousel-thumbnail {
+    height: calc(100% / 5);
+}
+
