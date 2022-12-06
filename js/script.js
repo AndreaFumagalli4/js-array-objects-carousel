@@ -44,14 +44,20 @@ const images = [
 
 const box = document.querySelector('div.carousel-image');
 
-const imageBox = document.createElement('div');
-imageBox.classList.add('my_carousel-item');
-
-box.append(imageBox);
-
 images.forEach((image, index) => {
+    const imageBox = document.createElement('div');
     const tagImage = document.createElement('img');
     tagImage.src = `./${image.image}`;
+    imageBox.classList.add('my_carousel-item');
     imageBox.append(tagImage);
-})
+    box.append(imageBox);
+    if (index === 0) {
+    imageBox.classList.add('active');
+        }
+
+});
+
+const previousButton = document.querySelector('div.previous');
+const nextButton = document.querySelector('div.next');
+
 
