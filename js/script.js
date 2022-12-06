@@ -42,6 +42,7 @@ const images = [
 // Milestone 2:
 // Aggiungiamo alla visualizzazione delle immagini anche titolo e testo relative alla singola immagine.
 
+const divList = [];
 const box = document.querySelector('div.carousel-image');
 
 images.forEach((image, index) => {
@@ -51,11 +52,12 @@ images.forEach((image, index) => {
     imageBox.classList.add('my_carousel-item');
     imageBox.append(tagImage);
     box.append(imageBox);
-    if (index === 0) {
-    imageBox.classList.add('active');
-        }
-
+    divList.push(imageBox);
 });
+
+console.log(divList);
+
+divList[0].classList.add('active');
 
 const previousButton = document.querySelector('div.previous');
 const nextButton = document.querySelector('div.next');
