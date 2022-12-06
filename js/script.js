@@ -66,11 +66,18 @@ const nextButton = document.querySelector('div.next');
 nextButton.addEventListener('click', function() {
     counter++;
     divList[(counter - 1)].classList.remove('active');
+    if (counter > 4) {
+        counter = 0;
+    }
     divList[counter].classList.add('active');
+    
 });
 
 previousButton.addEventListener('click', function() {
     counter--;
     divList[(counter + 1)].classList.remove('active');
+    if (counter < 0) {
+        counter = 4;
+    }
     divList[counter].classList.add('active');
 });
