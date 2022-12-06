@@ -45,7 +45,7 @@ const images = [
 const divList = [];
 const box = document.querySelector('div.carousel-image');
 
-images.forEach((image, index) => {
+images.forEach((image) => {
     const imageBox = document.createElement('div');
     const tagImage = document.createElement('img');
     tagImage.src = `./${image.image}`;
@@ -64,20 +64,21 @@ const previousButton = document.querySelector('div.previous');
 const nextButton = document.querySelector('div.next');
 
 nextButton.addEventListener('click', function() {
+    divList[counter].classList.remove('active');
     counter++;
-    divList[(counter - 1)].classList.remove('active');
-    if (counter > 4) {
+    if (counter >= divList.length) {
         counter = 0;
     }
     divList[counter].classList.add('active');
-    
 });
 
 previousButton.addEventListener('click', function() {
+    divList[counter].classList.remove('active');
     counter--;
-    divList[(counter + 1)].classList.remove('active');
     if (counter < 0) {
-        counter = 4;
+        counter = (divList.length - 1);
     }
     divList[counter].classList.add('active');
 });
+
+const sideBox = document.querySelector('div.carousel-wrapper');
