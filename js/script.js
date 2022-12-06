@@ -25,3 +25,33 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+// Dato un array di oggetti letterali con:
+// - url dell’immagine
+// - titolo
+// - descrizione
+// Creare un carosello.
+
+// Milestone 0:
+// Popoliamo dinamicamente il contenuto del carosello con i dati forniti dall'array di oggetti,
+// dal js (dentro al nostro 'carousel-item', per capirci).
+
+// Milestone 1:
+// Al click dell'utente sulle frecce verso l'alto o verso il basso, l'immagine attiva diventerà visibile.
+
+// Milestone 2:
+// Aggiungiamo alla visualizzazione delle immagini anche titolo e testo relative alla singola immagine.
+
+const box = document.querySelector('div.carousel-image');
+
+const imageBox = document.createElement('div');
+imageBox.classList.add('my_carousel-item');
+
+box.append(imageBox);
+
+images.forEach((image, index) => {
+    const tagImage = document.createElement('img');
+    tagImage.src = `./${image.image}`;
+    imageBox.append(tagImage);
+})
+
